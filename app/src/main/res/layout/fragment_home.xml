@@ -1,26 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/warm_background"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="24dp">
+    android:fillViewport="true">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:text="Welcome"
-        android:textColor="@color/warm_accent"
-        android:textSize="56sp"
-        android:textStyle="bold|italic" />
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="24dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Let's wake up your computer"
-        android:textColor="@color/warm_text"
-        android:textSize="18sp" />
-</LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="serif"
+            android:text="Welcome"
+            android:textColor="@color/warm_accent"
+            android:textSize="56sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Let's wake up your computer"
+            android:textColor="@color/warm_text"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/mac_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:digits="0123456789abcdefABCDEF:-"
+            android:hint="MAC address (AA:BB:CC:DD:EE:FF)"
+            android:importantForAutofill="no"
+            android:inputType="textCapCharacters|textNoSuggestions"
+            android:maxLength="17"
+            android:textColor="@color/warm_text"
+            android:textColorHint="@color/warm_text" />
+
+        <EditText
+            android:id="@+id/ip_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:digits="0123456789."
+            android:hint="Broadcast IP (192.168.1.255)"
+            android:importantForAutofill="no"
+            android:inputType="number|numberDecimal"
+            android:textColor="@color/warm_text"
+            android:textColorHint="@color/warm_text" />
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/warm_text"
+            android:text="Save"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/wake_button"
+            android:layout_width="220dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/warm_accent"
+            android:enabled="false"
+            android:text="Wake PC"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/hint_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Save your MAC and IP to enable the button"
+            android:textColor="@color/warm_text"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+</ScrollView>
